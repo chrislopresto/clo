@@ -13,7 +13,7 @@ let fsStub: sinon.SinonStub
 let childProcessStub: sinon.SinonStub
 let cmd: Vs
 
-describe('target', () => {
+describe('run', () => {
   beforeEach(async () => {
     config = await Config.load(loadConfig.root)
     sandbox.stub(config, 'home').value('/Users/jacopastorius')
