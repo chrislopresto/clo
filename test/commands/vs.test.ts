@@ -7,14 +7,15 @@ import * as sinon from 'sinon'
 
 import Vs from '../../src/commands/vs'
 
-let config: Config.IConfig
-let sandbox = sinon.sandbox.create()
-let fsStub: sinon.SinonStub
-let childProcessStub: sinon.SinonStub
-let cmd: Vs
+describe('run', () => {
+  let config: Config.IConfig
+  let sandbox: sinon.SinonSandbox
+  let fsStub: sinon.SinonStub
+  let childProcessStub: sinon.SinonStub
+  let cmd: Vs
 
-describe('target', () => {
   beforeEach(async () => {
+    sandbox = sinon.createSandbox()
     config = await Config.load(loadConfig.root)
     sandbox.stub(config, 'home').value('/Users/jacopastorius')
     fsStub = sandbox.stub(fs, 'existsSync')
