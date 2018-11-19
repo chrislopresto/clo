@@ -25,7 +25,6 @@ describe('run', () => {
 
   afterEach(() => {
     sandbox.restore()
-    childProcessStub.restore()
   })
 
   it('opens the current directory if no name is specified', () => {

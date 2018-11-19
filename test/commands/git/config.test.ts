@@ -47,7 +47,6 @@ describe('git:config', () => {
 
   it('gets the signing key from a gitconfig.local for a tag', () => {
     expect(cmd.signingKey('personal')).equals('F0F8FCB77612188F')
-    // expect(cmd.signingKey('personal')).equals('F0F8FCB77612188F')
   })
 
   it('gets the email from a gitconfig for a tag', () => {
