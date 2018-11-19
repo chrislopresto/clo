@@ -8,11 +8,12 @@ const SIGNING_KEY_REGEX = /^\s+signingkey = ([A-F0-9]+)$/gm
 const EMAIL_REGEX = /^\s+email = (([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/gm
 const NAME_REGEX = /^\s+name = ([a-zA-Z ]+)$/gm
 
-export default class Config extends Command {
+export default class GitConfig extends Command {
   static description = 'Commands for git config'
 
   static examples = [
-    '$ clo git config --signing=personal',
+    '$ clo git:config --signingKey=personal',
+    '$ clo git:config -s work',
   ]
 
   static flags = {
@@ -26,7 +27,7 @@ export default class Config extends Command {
   }
 
   async run() {
-    let {flags} = this.parse(Config)
+    let {flags} = this.parse(GitConfig)
     let rcmTag = flags.signingKey as RcmTag
     let commands = [
       `git config --local user.name "${this.name(rcmTag)}"`,
