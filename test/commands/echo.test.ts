@@ -1,6 +1,6 @@
 import {expect, test} from '@oclif/test'
 
-const trimEachLine = (multilineString: string) => multilineString.split('\n').filter((s: string) => s !== '').map((s: string) => s.trim()).join()
+const trimEachLine = (multilineString: string) => multilineString.split('\n').map(s => s.trim()).join()
 
 describe('echo', () => {
   test
@@ -29,8 +29,8 @@ e::::::::e          c:::::::cccccc:::::ch:::::h     h:::::ho:::::ooooo:::::o
 
   test
     .stdout()
-    .command(['echo', 'Moo', '--font', 'rectangles'])
-    .it('runs echo Moo --font rectangles', ctx => {
+    .command(['echo', 'Moo', '--font', 'Rectangles'])
+    .it('runs echo Moo --font Rectangles', ctx => {
       expect(trimEachLine(ctx.stdout)).to.contain(trimEachLine(`
  _____
 |     |___ ___
