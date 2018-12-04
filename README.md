@@ -29,20 +29,17 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`clo hello [FILE]`](#clo-hello-file)
 * [`clo echo [TEXT]`](#clo-echo-text)
 * [`clo git:config`](#clo-gitconfig)
 * [`clo help [COMMAND]`](#clo-help-command)
 * [`clo vs [NAME]`](#clo-vs-name)
 
-## `clo hello [FILE]`
 ## `clo echo [TEXT]`
 
 describe the command here
 
 ```
 USAGE
-  $ clo hello [FILE]
   $ clo echo [TEXT]
 
 OPTIONS
@@ -56,14 +53,10 @@ _See code: [src/commands/echo.ts](https://github.com/chrislopresto/clo/blob/v0.0
 
 Commands for git config
 
-EXAMPLE
-  $ clo hello
-  hello world from ./src/hello.ts!
 ```
 USAGE
   $ clo git:config
 
-_See code: [src/commands/hello.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/hello.ts)_
 OPTIONS
   -h, --help                      show CLI help
   -s, --signingKey=personal|work  (required) rcm tag to use for signingkey
