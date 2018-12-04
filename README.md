@@ -32,6 +32,7 @@ USAGE
 * [`clo echo [TEXT]`](#clo-echo-text)
 * [`clo git:config`](#clo-gitconfig)
 * [`clo help [COMMAND]`](#clo-help-command)
+* [`clo ktype [THEME]`](#clo-ktype-theme)
 * [`clo vs [NAME]`](#clo-vs-name)
 
 ## `clo echo [TEXT]`
@@ -44,7 +45,8 @@ USAGE
 
 OPTIONS
   -f, --font=font
-  -h, --help       show CLI help
+  -g, --gradient=gradient
+  -h, --help               show CLI help
 ```
 
 _See code: [src/commands/echo.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/echo.ts)_
@@ -84,6 +86,20 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+
+## `clo ktype [THEME]`
+
+describe the command here
+
+```
+USAGE
+  $ clo ktype [THEME]
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/ktype.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/ktype.ts)_
 
 ## `clo vs [NAME]`
 
