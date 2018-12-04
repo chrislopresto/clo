@@ -1,6 +1,8 @@
 import {Command, flags} from '@oclif/command'
-import * as figlet from 'figlet';
-import * as gradient from 'gradient-string';
+import * as figlet from 'figlet'
+import * as gradientString from 'gradient-string'
+
+type GradientAlias = 'atlas' | 'cristal' | 'teen' | 'mind' | 'morning' | 'vice' | 'passion' | 'fruit' | 'instagram' | 'retro' | 'summer' | 'rainbow' | 'pastel'
 
 export default class Echo extends Command {
   static description = 'describe the command here'
@@ -9,6 +11,8 @@ export default class Echo extends Command {
     help: flags.help({char: 'h'}),
     // flag with string value (-f, --font)
     font: flags.string({char: 'f'}),
+    // flag with string value (-g, --gradient)
+    gradient: flags.string({char: 'g'}),
   }
 
   static args = [{name: 'text'}]
@@ -18,6 +22,7 @@ export default class Echo extends Command {
 
     let text = args.text || 'echo'
     let font: figlet.Fonts = (flags.font as figlet.Fonts) || 'Doh'
-    this.log(gradient.atlas.multiline(figlet.textSync(text, font)))
+    let gradient: GradientAlias = (flags.gradient as GradientAlias) || 'atlas'
+    this.log(gradientString[gradient].multiline(figlet.textSync(text, font)))
   }
 }
