@@ -1,11 +1,13 @@
 import {expect, test} from '@oclif/test'
 
+const trimEachLine = (multilineString: string) => multilineString.split('\n').filter((s: string) => s !== '').map((s: string) => s.trim()).join()
+
 describe('echo', () => {
   test
     .stdout()
     .command(['echo'])
     .it('runs echo', ctx => {
-      expect(ctx.stdout).to.contain(`
+      expect(trimEachLine(ctx.stdout)).to.contain(trimEachLine(`
                                        hhhhhhh
                                        h:::::h
                                        h:::::h
@@ -22,18 +24,18 @@ e::::::::e          c:::::::cccccc:::::ch:::::h     h:::::ho:::::ooooo:::::o
  e::::::::eeeeeeee   c:::::::::::::::::ch:::::h     h:::::ho:::::::::::::::o
   ee:::::::::::::e    cc:::::::::::::::ch:::::h     h:::::h oo:::::::::::oo
     eeeeeeeeeeeeee      cccccccccccccccchhhhhhh     hhhhhhh   ooooooooooo
-`.trim())
+`))
     })
 
   test
     .stdout()
     .command(['echo', 'Moo', '--font', 'rectangles'])
     .it('runs echo Moo --font rectangles', ctx => {
-      expect(ctx.stdout).to.contain(`
-_____
+      expect(trimEachLine(ctx.stdout)).to.contain(trimEachLine(`
+ _____
 |     |___ ___
 | | | | . | . |
 |_|_|_|___|___|
-`.trim())
+`))
     })
 })
