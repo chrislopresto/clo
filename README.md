@@ -29,28 +29,44 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`clo hello [FILE]`](#clo-hello-file)
+* [`clo echo [TEXT]`](#clo-echo-text)
+* [`clo git:config`](#clo-gitconfig)
 * [`clo help [COMMAND]`](#clo-help-command)
+* [`clo vs [NAME]`](#clo-vs-name)
 
-## `clo hello [FILE]`
+## `clo echo [TEXT]`
 
 describe the command here
 
 ```
 USAGE
-  $ clo hello [FILE]
+  $ clo echo [TEXT]
 
 OPTIONS
-  -f, --force
+  -f, --font=font
   -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ clo hello
-  hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/echo.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/echo.ts)_
+
+## `clo git:config`
+
+Commands for git config
+
+```
+USAGE
+  $ clo git:config
+
+OPTIONS
+  -h, --help                      show CLI help
+  -s, --signingKey=personal|work  (required) rcm tag to use for signingkey
+
+EXAMPLES
+  $ clo git:config --signingKey=personal
+  $ clo git:config -s work
+```
+
+_See code: [src/commands/git/config.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/git/config.ts)_
 
 ## `clo help [COMMAND]`
 
@@ -68,4 +84,21 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+
+## `clo vs [NAME]`
+
+Commands for VS Code
+
+```
+USAGE
+  $ clo vs [NAME]
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ clo vs chrislopresto
+```
+
+_See code: [src/commands/vs.ts](https://github.com/chrislopresto/clo/blob/v0.0.0/src/commands/vs.ts)_
 <!-- commandsstop -->
