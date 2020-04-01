@@ -49,7 +49,7 @@ export default class GitConfig extends Command {
   }
 
   email(tag: RcmTag) {
-    let gitConfigLocalPath = path.join(this.config.home, '.dotfiles', `tag-${tag}`, 'gitconfig')
+    let gitConfigLocalPath = path.join(this.config.home, '.dotfiles', `tag-${tag}`, 'gitconfig.local')
     let gitConfigLocal = fs.readFileSync(gitConfigLocalPath, {encoding: 'utf8'})
     let emailResult = EMAIL_REGEX.exec(gitConfigLocal)
     return emailResult ? emailResult[1] : null

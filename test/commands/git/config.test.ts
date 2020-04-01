@@ -15,9 +15,9 @@ describe('git:config', () => {
   let cmd: GitConfig
   let gitConfig = `[user]\n
   name = Jaco Pastorius\n
-  email = jaco@jacopastorius.com\n
-`
+  `
   let gitConfigLocal = `[user]\n
+  email = jaco@jacopastorius.com\n
   signingkey = F0F8FCB77612188F\n
 `
 
@@ -49,7 +49,7 @@ describe('git:config', () => {
     expect(cmd.signingKey('personal')).equals('F0F8FCB77612188F')
   })
 
-  it('gets the email from a gitconfig for a tag', () => {
+  it('gets the email from a gitconfig.local for a tag', () => {
     expect(cmd.email('personal')).equals('jaco@jacopastorius.com')
   })
 
